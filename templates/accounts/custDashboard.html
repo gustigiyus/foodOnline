@@ -2,8 +2,13 @@
 
 {% block content %}
 
-<h1>Welcome {{user.username}}</h1>
-<h2>This is {{user.get_role}}</h2>
+<div style="height: 520px;">
+    <h1 class="text-center" style="font-weight: bold; margin-top: 30px;">Welcome {{user.username}} - This is {{user.get_role}}</h1>
+</div>
+
+
+
+
 {% include 'includes/alert.html' %}
 
 {% endblock %}
