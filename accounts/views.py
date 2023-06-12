@@ -188,6 +188,7 @@ def vendorDashboard(request):
     # context = {
     #     'vendor': vendor,
     # }
+    # print(vendor.user_profile.full_address())
     return render(request, 'accounts/vendorDashboard.html')
 
 
