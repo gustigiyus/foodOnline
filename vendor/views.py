@@ -148,11 +148,17 @@ def add_food(request):
             food = form.save(commit=False)
             food.vendor = get_vendor(request)
             food.slug = slugify(food_title)
-            form.save()
-            messages.success(request, 'Food item added successfully!')
-            return redirect('fooditems_by_category', food.category.id)
-        else:
+            valid_food = FoodItem.objects.filter(slug=food.slug).exists()
 
+            if valid_food == False:
+                form.save()
+                messages.success(request, 'Food item added successfully!')
+                return redirect('fooditems_by_category', food.category.id)
+            else:
+                # ADD CUSTOM ERRORS IF SLUG IDDNT UNIQUE
+                form['food_title'].field.widget.attrs['class'] += ' is-invalid'
+                form.add_error('food_title', "Name of food already exist in the marketplace, please add some unique name!")
+        else:
             # Append class after rendering and overide class is-invalid to form
             for field in form.errors:
                 form[field].field.widget.attrs['class'] += ' is-invalid'

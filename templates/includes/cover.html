@@ -25,6 +25,9 @@
                                 {% if vendor.user_profile.full_address != "None, None" %}
                                 <i class="icon-location"></i>
                                 <p>{{ vendor.user_profile.full_address }}</p>
+                                {% else %}
+                                <i class="icon-location"></i>
+                                <p>location has not been set</p>
                                 {% endif %}
                             </div>
                         </div>
