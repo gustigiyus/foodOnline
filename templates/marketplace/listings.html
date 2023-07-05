@@ -50,9 +50,17 @@
                                                 </h5>
                                             </div>
                                             {% if vendor.user_profile.full_address != 'None, None' %}
-                                            <span class="post-categories">{{ vendor.user_profile.full_address }} <span>
+                                            <span class="post-categories">{{ vendor.user_profile.address_line_1 }} <span>
                                             {% else %}
                                             <span class="post-categories">location has not been set</span>
+                                            {% endif %}
+
+                                            {% if source_location %}
+                                            <br>
+                                            <div class="mt-1">
+                                                <span><small><strong style="color: green;">{{vendor.kms}}km away</strong> 
+                                                    <strong style="color: rgb(192, 67, 67);"> from {{source_location}}</strong></small></span>
+                                            </div>
                                             {% endif %}
                                         </div>
                                         <div class="list-option">

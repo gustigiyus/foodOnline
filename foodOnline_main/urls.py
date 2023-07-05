@@ -33,5 +33,8 @@ urlpatterns = [
     path('marketplace/', include('marketplace.urls')),
     # CART
     path('cart/', vmarketplace.cart, name='cart'),  
+    # SEACRH
+    path('search/', vmarketplace.search, name='search'),
+
 
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

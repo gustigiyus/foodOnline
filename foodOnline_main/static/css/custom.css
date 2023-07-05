@@ -134,3 +134,7 @@ MARKETPLACE SECTION
 .hand-icons i:nth-child(3) {
     animation: move-left-arm 1s ease-in-out infinite; /* Animasi tangan kiri */
 }
+
+.main-search.fancy .field-holder input[type="text"] {
+    color: #000000 !important;
+}
